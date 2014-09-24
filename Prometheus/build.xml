@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<project name="Prometheus_release1" basedir="." default="build">
+
+	<property name="src.dir" value="src" />
+	<property name="build.dir" value="build" />
+	<property name="classes.dir" value="${build.dir}/classes" />
+	<property name="release.dir" value="release" />
+	<property name="ECLIPSE_HOME" value="../../../../../../usr/lib/eclipse" />
+	<path id="junit">
+		<pathelement location="lib/junit-4.8.2.jar" />
+		<pathelement location="${ECLIPSE_HOME}/dropins/jdt/plugins/org.hamcrest.core_1.1.0.jar" />
+	</path>
+	
+	<path id="classpath">
+		<pathelement location="${classes.dir}" />
+		<path refid="junit" />
+		<pathelement location="lib/abbot.jar" />
+	</path>
+
+	<target name="clean">
+		<delete dir="${build.dir}" />
+		<delete dir="${release.dir}" />
+	</target>
+
+	<target name="compile">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${classes.dir}" />
+		<javac srcdir="${src.dir}" destdir="${classes.dir}">
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+		
+	<target name="junit" depends="compile">
+		<junit printsummary="yes" showoutput="yes" haltonerror="true">
+			<classpath refid="classpath"/>
+				<test name="se.lth.test.Acceptanstester" />
+				<test name="se.lth.test.ClassHandleTest" />
+	            <test name="se.lth.test.CurrentTimeTest" />
+	            <test name="se.lth.test.ErrorHandlingTest" />
+	            <test name="se.lth.test.FinishFileReaderTest" />
+				<test name="se.lth.test.GuiTest" />
+				<test name="se.lth.test.LapRacePrinterTest" />
+				<test name="se.lth.test.MarathonPrinterTest" />
+				<test name="se.lth.test.PersonFileReaderTest" />
+	            <test name="se.lth.test.RaceFileReaderTest" />
+	            <test name="se.lth.test.RegisterFinishPrinterTest" />
+	            <test name="se.lth.test.RegisterStartPrinterTest" />
+	            <test name="se.lth.test.RiderTest" />
+	            <test name="se.lth.test.SorterTest" />
+	            <test name="se.lth.test.StartFileReaderTest" />
+	            <test name="se.lth.test.TimeTest" />
+				<test name="se.lth.test.TimeWriterTest" />
+		</junit>
+	</target>
+
+	<target name="jar" depends="junit">
+		<mkdir dir="${release.dir}" />
+
+		<jar destfile="${release.dir}/Sorter.jar">
+			<fileset dir="${classes.dir}" excludes="se/lth/test/" />
+
+			<manifest>
+				<attribute name="Main-Class" value="se.lth.sort.Sorter" />
+			</manifest>
+		</jar>
+
+
+
+		<jar destfile="${release.dir}/Register.jar">
+			<fileset dir="${classes.dir}" excludes="se/lth/test/" />
+			<manifest>
+				<attribute name="Main-Class" value="se.lth.GUI.Window" />
+			</manifest>
+		</jar>
+	</target>
+	
+	
+	<target name="compress" depends="jar">
+		<zip destfile="${release.dir}/release.zip">
+		    <fileset dir="${release.dir}" includes="*.jar" />
+		    <fileset dir="manual" />
+		</zip>
+	</target>
+
+	<target name="build" depends="clean, compile, jar, junit, compress">
+	</target>
+
+	<target name="test" depends="build, junit">
+	</target>
+
+
+
+</project>

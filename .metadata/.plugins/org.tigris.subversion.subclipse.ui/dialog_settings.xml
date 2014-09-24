@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="585" key="passwordStores.size.y"/>
+	<item value="1280" key="passwordStores.size.x"/>
+	<item value="14" key="passwordStores.location.y"/>
+	<item value="0" key="passwordStores.location.x"/>
+	<section name="NewLocationWizard">
+		<list key="ConfigurationWizardMainPage.STORE_URL_ID">
+			<item value="http://svn.cs.lth.se/svn/eda260/vt13/team12"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/eda260/vt13/team12/!svn/ver/236/Prometheus/src/se/lth/prometheus
+END
+RaceFileReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/eda260/vt13/team12/!svn/ver/236/Prometheus/src/se/lth/prometheus/RaceFileReader.java
+END
+Rider.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/eda260/vt13/team12/!svn/ver/212/Prometheus/src/se/lth/prometheus/Rider.java
+END
+CurrentTime.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/eda260/vt13/team12/!svn/ver/222/Prometheus/src/se/lth/prometheus/CurrentTime.java
+END
+PersonFileReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/eda260/vt13/team12/!svn/ver/233/Prometheus/src/se/lth/prometheus/PersonFileReader.java
+END
+FinishFileReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/eda260/vt13/team12/!svn/ver/222/Prometheus/src/se/lth/prometheus/FinishFileReader.java
+END
+StartFileReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/eda260/vt13/team12/!svn/ver/195/Prometheus/src/se/lth/prometheus/StartFileReader.java
+END
+ConfigFileReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/eda260/vt13/team12/!svn/ver/234/Prometheus/src/se/lth/prometheus/ConfigFileReader.java
+END

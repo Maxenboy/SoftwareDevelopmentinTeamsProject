@@ -1,0 +1,5 @@
+resultFile: result.txt
+startFile: start.txt; start2.txt; start3.txt
+finishFile: finish.txt
+nameFile: name.txt
+maxLaps: 4

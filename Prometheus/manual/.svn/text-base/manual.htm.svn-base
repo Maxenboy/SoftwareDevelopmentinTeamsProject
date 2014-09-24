@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+		body{
+			padding-top: 30px;
+		}
+
+
+		</style>
+		<script src="manual.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			$(".nav li a").click(function(){
+				$(".nav li").removeClass('active');
+				$(this).parent().addClass('active');
+			});
+		});
+		</script>
+		<link href="manual.css" rel="stylesheet">
+		<style type="text/css">
+			#content p, #content ul, #content li{
+				font-size: 12pt !important;
+			}
+		</style>
+		<title>Manual</title>
+	</head>
+	<body>
+
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+			<h3>Innehåll</h3>
+            <ul class="nav nav-list">
+              <li class="nav-header"><a href="#link-manual">Manual</a></li>
+			  <li><a href="#link-installation">Installation</a></li>
+			  <li><a href="#link-krav">Krav</a></li>
+			  <li><a href="#link-namefile">Format på namnfil</a></li>
+			  <li><a href="#link-startReg">Starta registreringsprogrammet</a></li>
+			  <li><a href="#link-startSort">Starta sorteringsprogrammet</a></li>
+
+			  <li><a href="#link-register">Registrera start- eller måltider</a></li>
+			  <li><a href="#link-resultlist">Generera resultatlista</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <div class="hero-unit" id="content">
+            <h1 id="link-manual">Manual</h1>
+			<p>Produkten kommer som två program och en manual, detta dokument. De två programmen är ett registrerarprogram respektive sorteringsprogram. Dessa kan användas separat och samtidigt.</p>
+			<h2 id="link-installation">Installation</h2>
+			<h3 id="link-krav">Krav</h3>
+			<p>För att produkten ska kunna köras finns följande krav på datorn:</p>
+			<ul>
+				<li>Java version 7, <a href="http://www.java.com/sv/download/">Länk till nedladdning</a></li>
+				<li>Korrekt formaterad namnfil</li>
+			</ul>
+			<h3 id="link-namefile">Format på namnfil</h3>
+			<p>Första raden i filen skall vara: <code>StartNr; Namn</code>. Varje deltagare i namnfilen finns på var sin rad med formatet: <code>startNr; Namn</code> där startNr är ett heltal och Namn är godtycklig text. Det får inte finnas dubletter av startNr i filen. <br>Exempel på namnfil:<br>
+<pre>
+StartNr; Namn
+1; Anders Asson
+2; Bengt Bsson
+3; Chris Csson
+4; David Dsson
+5; Erik Esson
+</pre>
+			</p>
+			<h3 id="link-startReg">Starta registreringsprogrammet</h3>
+			<p>Ta upp ett terminalfönster och navigera till register-programmet. Kör det sedan genom att skriva följande: <pre>java -jar Register.jar</pre></p>
+			<h3 id="link-startSort">Starta sorteringsprogrammet</h3>
+			<p>För att kunna använda sorteringsprogrammet måste du först ha kört registreringsprogammet. <br>
+			Öppna kommandotolken och navigera (<a href="http://windows.microsoft.com/sv-SE/windows-vista/Command-Prompt-frequently-asked-questions">Windows</a>, <a href="http://ss64.com/bash/">Linux/Mac</a>) till mappen där programmet finns. 
+			<h4>Marathonlopp</h4>
+			Skriv <pre>java -jar Sorter.jar resultatfil starttidsfil måltidsfil namnfil</pre> där du byter ut starttidsfil, måltidsfil till de filer du fick från registreringsprogrammet samt skriv in din resultatfil och namnfil. Glöm inte filändelsen (.txt)!
+			<h4>Varvlopp</h4>
+			Skriv <pre>java -jar Sorter.jar resultatfil starttidsfil måltidsfil namnfil X</pre> där du byter ut starttidsfil, måltidsfil till de filer du fick från registreringsprogrammet samt skriv in din resultatfil och namnfil. Glöm inte filändelsen (.txt)! X byts ut mot ett heltal, större än 0, som avgör övre gräns för antal utskrivna varv.
+			
+			</p>
+			<p>En resultatfil kommer att skapas utifrån det du skrev i kommandoraden.</p>
+			
+			<h2 id="link-register">Registrera start- eller måltider</h2>
+			<p>Starta registreringsprogrammet. Skriv in tävlandes id-nummer samt välj om det är startregistrering eller målregistrering. Tryck på Register för att registrera. Om flera start- eller måltider registreras kommer detta att skrivas ut som en varning i resultatfilen, men alla registreras.</p>
+			<h2 id="link-resultlist">Generera resultatlista</h2>
+			<p>Resultatlistan sparas alltid automatiskt i resultatfilen från registreringsprogrammet. Filen hittar du i samma mapp som programmet ligger i.</p>
+          </div>
+      
+        </div><!--/span-->
+      </div><!--/row-->
+	</body>
+</html>
+
